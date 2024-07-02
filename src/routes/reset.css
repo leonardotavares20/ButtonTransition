@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Borterks";
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/borteks.otf");
+  src: local("fonts/borteks.otf"), url("fonts/borteks.otf") format("opentype");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: 0;
+  font-family: "Borterks";
+}
