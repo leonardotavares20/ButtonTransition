@@ -1,6 +1,7 @@
 <script>
   import "./reset.css";
   import BtnBlue from "./BtnBlue.svelte";
+  import BtnYellow from "./BtnYellow.svelte";
 </script>
 
 <svelte:head>
@@ -10,6 +11,7 @@
 <div class="container">
   <div id="container__container-buttons" class="container__container-buttons">
     <BtnBlue />
+    <BtnYellow />
   </div>
 </div>
 
@@ -25,6 +27,7 @@
 
   .container__container-buttons {
     display: flex;
+    gap: 20px;
     align-items: center;
     justify-content: center;
   }

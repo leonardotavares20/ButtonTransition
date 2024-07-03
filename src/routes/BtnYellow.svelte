@@ -1,9 +1,7 @@
 <script>
   import { onMount } from "svelte";
-  import gsap from "gsap";
   let timeline;
-  import Arrow from "./arrow.svelte";
-  import { createTimelineBtnBlue } from "./timeline-btn-blue";
+  import { createTimelineBtnYellow } from "./timeline-btn-yellow";
 
   function playTimeline() {
     timeline.play();
@@ -14,7 +12,7 @@
   }
 
   onMount(() => {
-    timeline = createTimelineBtnBlue();
+    timeline = createTimelineBtnYellow();
 
     return () => {
       timeline.kill();
@@ -24,20 +22,19 @@
 
 <button
   id="btn-blue"
-  class="btn-blue"
+  class="btn-yellow"
   on:mouseover={playTimeline}
   on:mouseleave={reverseTimeline}
   on:focus={playTimeline}
   on:blur={reverseTimeline}
   aria-hidden="true"
 >
-  <span id="btn-blue__bullet" class="btn-blue__bullet"></span>
-  <span id="btn-blue__text" class="btn-blue__text"> About Us </span>
-  <Arrow />
+  <span id="btn-textOne" class="btn-textOne">Our Work</span>
+  <span id="btn-textTwo" class="btn-textTwo">Our Work</span>
 </button>
 
 <style>
-  .btn-blue {
+  .btn-yellow {
     width: 200px;
     cursor: pointer;
     height: 50px;
@@ -47,36 +44,29 @@
     justify-content: center;
     gap: 5px;
     padding: 0px 0px;
-    display: flex;
+    display: grid;
     position: relative;
     font-size: 1.8rem;
     border-radius: 30px;
     overflow: hidden;
+    color: black;
   }
 
-  .btn-blue__text {
+  .btn-textOne {
     position: relative;
-    /* left: 30%; */
-    justify-self: center;
-    z-index: 10;
   }
 
-  .btn-blue__bullet {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    top: 50%;
-    z-index: 1;
-    background-color: black;
-    transform: translateX(-10px);
-  }
-
-  :global(svg) {
-    width: 35px;
-    z-index: 1;
-    right: 0;
-    transform: translateX(50px);
+  .btn-textTwo {
     position: absolute;
-    opacity: 0;
+    left: 50%;
+    background-color: #c9ff18;
+    width: 60%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 500px;
+    transform: translateX(-50%);
+    top: 100%;
   }
 </style>

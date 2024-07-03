@@ -5,7 +5,7 @@ export function createTimelineBtnBlue() {
     .timeline({ paused: true })
     .to("#btn-blue__bullet", {
       duration: 0.4,
-      ease: "sine.out",
+      ease: "power3.inOut",
       scale: 35,
       background: "#1100BA",
     })
@@ -14,5 +14,5 @@ export function createTimelineBtnBlue() {
       { color: "white", x: 50, duration: 0.4, left: "-35%" },
       0
     )
-    .to("#arrow", { opacity: 1, x: -25, duration: 0.4, ease: "sine" }, 0);
+    .to("#arrow", { opacity: 1, x: -25, duration: 0.4, ease: "power3.inOut" }, 0);
 }
